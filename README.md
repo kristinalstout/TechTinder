@@ -7,7 +7,8 @@ The first step is always the hardest. Your job is to make sure all our core deli
 # Setup
 
     1. Run 'npm install' in your terminal
-    2. Run 'npm run server' to open your backend port. 3. In a new terminal, run 'npm start'.
+    2. Run 'npm run server' to open your backend port.
+    3. In a new terminal, run 'npm start'.
 
 # Core Deliverables
 
