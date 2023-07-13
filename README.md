@@ -14,3 +14,8 @@ The first step is always the hardest. Your job is to make sure all our core deli
     1. When the app starts up, I can see my profile, and lonely singles' profiles with their picture, name, and bio.
     2. When I click on the singles profile, I can see any additional info.
     3. If I click on the 'X' button, I can delete them from the db.json and remove them as a potential partner. If I click on the check, I can choose to match with them!
+    4. I can open a chat box if I'd like to start a convo with someone.
+    5. I can search singles by name or bio in the search bar.
+    6. I can toggle from the Barbie themed layout to the Oppenheimer themed layout by clicking the 'mode' button.
+
+Good luck finding the perfect match for you!
