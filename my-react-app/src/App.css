@@ -2,6 +2,19 @@
   text-align: center;
 }
 
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.card {
+  color: white;
+}
+
+img {
+  width: 10%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -26,13 +39,4 @@
 
 .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
