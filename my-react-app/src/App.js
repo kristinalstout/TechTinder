@@ -8,6 +8,7 @@ import "./App.css";
 function App() {
   const [matches, setMatches] = useState([]);
   const [matchArray, setMatchArray] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     fetch("http://localhost:3000/matches")
@@ -17,18 +18,18 @@ function App() {
       });
   }, []);
 
-  function handleMatchArray(search) {
+  function handleMatchArray(searchValue) {
     const newMatchArray = matches.filter(
       (match) =>
-        match.name.toLowerCase().includes(search.toLowerCase()) ||
-        match.bio.toLowerCase().includes(search.toLowerCase())
+        match.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+        match.bio.toLowerCase().includes(searchValue.toLowerCase())
     );
     setMatchArray(newMatchArray);
   }
 
   return (
     <div className="app">
-      <Header matches={matches} handleMatchArray={handleMatchArray} />
+      <Header matches={matches} />
       <Search handleMatchArray={handleMatchArray} />
       {<MatchContainer matches={matches} />}
     </div>

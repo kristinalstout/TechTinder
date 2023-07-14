@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 
 function Search({ handleMatchArray }) {
   const handleChange = (e) => {
-    e.preventDefault();
-    const searchValue = (e) => {
-      handleMatchArray(searchValue);
-    };
+    const searchValue = e.target.value;
+    handleMatchArray(searchValue);
   };
 
   return (
