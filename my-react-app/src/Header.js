@@ -1,6 +1,6 @@
 import React from "react";
 
-function Header() {
+function Header({ matches, handleMatchArray }) {
   return (
     <header>
       <h1>Tech Tinder</h1>

@@ -13,7 +13,7 @@ function Match({ candidate }) {
       <button className="chat">Let's Chat!</button>
       <button className="hearted">♡</button>
     </div>
-  );
+  ); //onClick, have heart fill in 
 }
 
 export default Match;
