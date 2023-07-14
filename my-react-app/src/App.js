@@ -31,7 +31,7 @@ function App() {
     <div className="app">
       <Header matches={matches} />
       <Search handleMatchArray={handleMatchArray} />
-      {<MatchContainer matches={matches} />}
+      <MatchContainer matches={matches} />
     </div>
   );
 }

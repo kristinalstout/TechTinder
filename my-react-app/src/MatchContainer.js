@@ -4,8 +4,8 @@ import Match from "./Match";
 
 function MatchContainer({ matches }) {
   return (
-    <main>
-      <ul className="options-list">
+
+      <ul className="cards">
         {matches.map((candidate) => {
           return (
             <div key={`candidate-${candidate.id}`}>
@@ -14,7 +14,7 @@ function MatchContainer({ matches }) {
           );
         })}
       </ul>
-    </main>
+   
   );
 }
 export default MatchContainer;

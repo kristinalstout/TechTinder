@@ -1,32 +1,49 @@
 .App {
   text-align: center;
+  background-color: #ff27ed;
 }
 
 h1 {
   text-align: center;
   color: white;
-}
-
-.card {
-  color: white;
+  font-family: ;
+  font-size: 70px;
 }
 
 img {
   width: 10%;
 }
 
-.App-logo {
+.search-bar {
+  padding-top: 10px;
+  flex: 1 1 auto;
+  margin: 0 1rem;
+  display: flex;
+}
+
+.search-bar input {
+  margin: 0 1rem;
+  display: flex;
+  border-radius: 10px;
+  color: white;
+  background: transparent;
+  border: solid #ccc;
+  border-color: white;
+}
+
+.search-bar button {
+  font-size: 18px;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
-}
+} */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+/* .App-header {
   background-color: rgb(255, 35, 178);
   min-height: 100vh;
   display: flex;
@@ -35,8 +52,20 @@ img {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+} */
+
+/* ^^^i think these are from the og react css and are unnecessary? */
+
+.hearted {
+  font-size: 25px;
+  padding: 0;
+  border: none;
+  background: none;
 }
 
-.App-link {
-  color: #61dafb;
+.unhearted {
+  font-size: 25px;
+  padding: 0;
+  border: none;
+  background: none;
 }

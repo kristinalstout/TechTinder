@@ -7,14 +7,15 @@ function Search({ handleMatchArray }) {
   };
 
   return (
-    <div className="search-bar">
+    <form className="search-bar">
       <input
         type="text"
         id="search"
         placeholder="search..."
         onChange={handleChange}
       />
-    </div>
+      <button type="submit">🔎</button>
+    </form>
   );
 }
 
