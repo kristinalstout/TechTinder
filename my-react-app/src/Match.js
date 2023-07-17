@@ -2,9 +2,18 @@ import React, { useState } from "react";
 
 function Match({ candidate }) {
   const [heart, setHeart] = useState(false);
+  const [interested, setInterested] = useState(false);
 
   const toggleHeart = () => {
     setHeart(!heart);
+  };
+
+  const handleYes = () => {
+    setInterested(true);
+  };
+
+  const handleNo = () => {
+    setInterested(false);
   };
 
   return (
@@ -34,6 +43,10 @@ function Match({ candidate }) {
                 ♡
               </button>
             )}
+          </div>
+          <div>
+            <button className="yes">✔️</button>
+            <button className="no">❌</button>
           </div>
         </div>
       </div>

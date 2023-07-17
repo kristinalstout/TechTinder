@@ -15,6 +15,7 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         setMatches(data);
+        setMatchArray(data);
       });
   }, []);
 
