@@ -1,18 +1,23 @@
-body {
+* {
   margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+body {
+  padding: 1rem;
   background-color: #f086b4;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;*/
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+/*
 .options-list {
   display: "flex";
 }
@@ -97,7 +102,38 @@ div.card__detail p {
 
 div.card__detail button {
   text-align: center;
+}*/
+form {
+  margin: 1rem 0;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
+
+
+input,
+textarea {
+  font-size: 1rem;
+  border: 1px solid black;
+  background-color: white;
+  padding: 0.5rem;
+  margin: 0.25rem 0;
+  width: 100%;
+}
+
+input[type="submit"] {
+  color: white;
+  border: 1px solid white;
+  background-color: black;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+input[type="submit"]:active {
+  background-color: gray;
+}
+
 
 /*height: 200px;
   width: 200px;
