@@ -7,8 +7,7 @@
       "bio": "I love to code. I'm recovering from recent heartbreak, I need a shoulder to cry on.",
       "city": "Austin, TX",
       "interests": ["Video Games"],
-      "dealbreakers": ["Getting asked the same question repeatedly"],
-      "interested": false
+      "dealbreakers": ["Getting asked the same question repeatedly"]
     },
     {
       "id": 2,
@@ -16,9 +15,8 @@
       "image": "https://deadline.com/wp-content/uploads/2023/05/barbie-ryan-gosling-ken.jpg",
       "bio": "Just Ken! If I stand outside in the sun too long, I'll melt",
       "city": "Barbieland",
-      "interests": "Barbie",
-      "dealbreakers": "Not Barbie",
-      "interested": false
+      "interests": ["Barbie","Rollerskating"],
+      "dealbreakers": "Not Barbie"
     },
     {
       "id": 3,
@@ -27,8 +25,7 @@
       "bio": "Catch me out delivering pizzas at Flatiron Pizzeria! Also, I'm taken already.",
       "city": "Austin, TX",
       "interests": "My kids, only some Marvel Movies",
-      "dealbreakers": "Doesn't want to get married after 2 weeks of dating",
-      "interested": false
+      "dealbreakers": "Doesn't want to get married after 2 weeks of dating"
     },
     {
       "id": 4,
@@ -37,8 +34,7 @@
       "bio": "I'm the father of the atomic bomb. I'm out of your league",
       "city": "New York, NY",
       "interests": "Nuclear Physics",
-      "dealbreakers": "The color pink",
-      "interested": false
+      "dealbreakers": "The color pink"
     },
     {
       "id": 5,
@@ -47,8 +43,7 @@
       "bio": "I'm just a silly goofy guy looking to find tru luv. I'm currently the CEO of Mattel, but you may know me as Ricky Bobby or Mugatu",
       "city": "Amsterdam, Netherlands",
       "interests": "Owning things",
-      "dealbreakers": "A lot, probably",
-      "interested": false
+      "dealbreakers": "A lot, probably"
     }
   ]
 }

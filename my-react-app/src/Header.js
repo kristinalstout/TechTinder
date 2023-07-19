@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 import Profile from "./Profile";
 
 function Header({
-  matches,
+  match,
   setShowProfile,
   setShowHome,
   setMyMatches,
   handleYesClick,
+  setShowMatches,
 }) {
   function handleProfile() {
     setShowProfile(true);
@@ -18,9 +19,12 @@ function Header({
     setShowProfile(false);
   }
 
-  function handleMatches(match) {
-    setMyMatches((prevMatches) => [...prevMatches, match]);
-    setMyMatches(match);
+  function handleMatches() {
+    // if (!interested) {
+    //   handleYesClick(match);
+    // } else {
+    //   return "";
+    // }
   }
 
   function buttonName(showProfile) {
@@ -29,16 +33,23 @@ function Header({
   }
   return (
     <div>
-        <h1>
-          <span className="logo">
-            <img className="TT" src={"./techtinder.png"} alt="TechTinder" />
-          </span>
-        </h1>
-        <button className="mode">Barbie Mode</button>
+      <h1>
+        <span className="logo">
+          <img className="TT" src={"./techtinder.png"} alt="TechTinder" />
+        </span>
+      </h1>
+      <button className="mode">Barbie Mode</button>
 
       <nav className="nav">
         <ul>
-          <Link to="/" onClick={handleHome} className="nav_bar">
+          <Link
+            to="/"
+            onClick={() => {
+              setShowMatches(false);
+              handleHome();
+            }}
+            className="nav_bar"
+          >
             Home
           </Link>
         </ul>
@@ -48,24 +59,21 @@ function Header({
           </Link>
         </ul>
         <ul>
-          <Link to="/matches" onClick={handleMatches} className="nav_bar">
+          <Link
+            to="/matches"
+            onClick={() => {
+              setShowMatches(true);
+              setShowHome(false);
+              setShowProfile(false);
+            }}
+            className="nav_bar"
+          >
             Your Matches
           </Link>
         </ul>
       </nav>
-     </div>
+    </div>
   );
 }
 
 export default Header;
-
-// toggle barbie mode/oppenheimer mode
-// display your current matches
-
-/* <button className="home" onClick={handleHome}>
-Home
-</button>
-<button className="profile" onClick={handleProfile}>
-Make Profile
-</button>
-<button className="list">Your Matches</button> */

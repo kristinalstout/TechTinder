@@ -79,13 +79,11 @@ img {
 .nav {
   position: center;
   font-family: Verdana;
-
   list-style: none;
   display: flex;
-  /* justify-content: flex-start; */
+  justify-content: flex-start;
   margin: 10px;
   padding: 15px;
-  /* padding-bottom: 50px; */
   border-radius: 10px;
   background: rgb(255, 167, 229);
 }

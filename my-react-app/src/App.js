@@ -14,13 +14,17 @@ function App() {
   const [showProfile, setShowProfile] = useState(false);
   const [showHome, setShowHome] = useState(true);
   const [myMatches, setMyMatches] = useState([]);
+  const [showMatches, setShowMatches] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:3000/matches")
       .then((res) => res.json())
       .then((data) => {
-        setMatches(data);
         setMatchArray(data);
+        const interestedMatch = data.map((match) => {
+          return { ...match, interested: false };
+        });
+        setMatchArray(interestedMatch);
       });
   }, []);
 
@@ -33,9 +37,12 @@ function App() {
   }
 
   function handleYesClick(yesMatch) {
-    const selectedMatches = matches.filter((match) => match.id === yesMatch.id);
-    setMatchArray(selectedMatches);
-    setMatches(selectedMatches);
+    let foundIndex = matches.findIndex((match) => {
+      return match.id === yesMatch.id;
+    });
+    if (foundIndex === -1) {
+      setMatches([...matches, { ...yesMatch, interested: true }]);
+    }
   }
 
   function handleMatchArray(searchValue) {
@@ -47,6 +54,8 @@ function App() {
     setMatchArray(newMatchArray);
   }
 
+  const yesMatch = matches.filter((match) => match.interested);
+
   return (
     <div className="app">
       <Header
@@ -56,6 +65,7 @@ function App() {
         setShowHome={setShowHome}
         // myMatches={myMatches}
         setMyMatches={setMyMatches}
+        setShowMatches={setShowMatches}
       />
       <Search handleMatchArray={handleMatchArray} />
       {showProfile ? (
@@ -65,6 +75,8 @@ function App() {
           matches={matchArray}
           handleDeleteMatch={handleDeleteMatch}
           handleYesClick={handleYesClick}
+          showMatches={showMatches}
+          yesMatch={yesMatch}
         />
       )}
     </div>
@@ -72,9 +84,3 @@ function App() {
 }
 
 export default App;
-
-//  app
-//    |__header
-//    |__search
-//    |__match container
-//        |__matches

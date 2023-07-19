@@ -15,7 +15,6 @@ function Match({ match, handleDeleteMatch, handleYesClick }) {
 
   const toggleHeart = () => {
     setHeart(!heart);
-    console.log(match);
   };
 
   return (
@@ -54,7 +53,7 @@ function Match({ match, handleDeleteMatch, handleYesClick }) {
         <button className="no" onClick={handleNoClick}>
           ❌
         </button>
-        <button className="yes" onClick={(e) => handleYesClick(match.id)}>
+        <button className="yes" onClick={(e) => handleYesClick(match)}>
           ✔️
         </button>
       </div>
