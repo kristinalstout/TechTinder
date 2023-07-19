@@ -3,6 +3,7 @@
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
 }
+
 body {
   padding: 1rem;
   background-color: #f086b4;
@@ -17,6 +18,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.match {
+  color: rgb(233, 0, 167);
+}
+
+.profile {
+  color: rgb(233, 0, 167);
+}
+
+.home {
+  color: rgb(233, 0, 167);
+}
+
 /*
 .options-list {
   display: "flex";
@@ -111,7 +125,6 @@ form {
   align-items: flex-start;
 }
 
-
 input,
 textarea {
   font-size: 1rem;
@@ -133,7 +146,6 @@ input[type="submit"] {
 input[type="submit"]:active {
   background-color: gray;
 }
-
 
 /*height: 200px;
   width: 200px;

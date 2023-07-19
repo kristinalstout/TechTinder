@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from "react";
-import App from "./App"
-function Profile(){
-const [pName, setPName] = useState("")
-return(
+import App from "./App";
+
+function Profile() {
+  const [pName, setPName] = useState("");
+  return (
     <form id="full_profile">
       <h2>Create Your Love profile</h2>
       <h4>Pick your profile picture</h4>
 
-        <img src={"img"}
-        alt={"Picture"}
-        className="profile_image"
-        />
+      <img src={"img"} alt={"Picture"} className="profile_image" />
       <label for="profile_name">Name: </label>
       <input type="text" name="profile_name" id="profile-name" />
 
@@ -27,16 +25,19 @@ return(
       <textarea name="profile_interests" id="profile-interests"></textarea>
 
       <label for="profile_dealbreakers">Dealbreakers: </label>
-      <textarea name="profile_dealbreakers" id="profile-dealbreakers"></textarea>
-      
+      <textarea
+        name="profile_dealbreakers"
+        id="profile-dealbreakers"
+      ></textarea>
+
       <input type="submit" value="Start finding love" />
     </form>
-)
+  );
 }
-const profileName="name"
-const profileCity ="city"
-const profileBio="bio"
-const profileInterests="interests"
-const profileDealbreakers="dealbreakers"
+const profileName = "name";
+const profileCity = "city";
+const profileBio = "bio";
+const profileInterests = "interests";
+const profileDealbreakers = "dealbreakers";
 
-export default Profile
+export default Profile;

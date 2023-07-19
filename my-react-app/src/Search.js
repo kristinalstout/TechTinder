@@ -3,7 +3,7 @@ import React from "react";
 function Search({ handleMatchArray }) {
   const handleChange = (e) => {
     const searchValue = e.target.value;
-    handleMatchArray(searchValue);
+    return handleMatchArray(searchValue);
   };
 
   return (
@@ -12,9 +12,12 @@ function Search({ handleMatchArray }) {
         type="text"
         id="search"
         placeholder="search..."
+        style={{ color: "white" }}
         onChange={handleChange}
       />
-      <button type="submit">🔎</button>
+      <button className="glass" type="submit">
+        🔎
+      </button>
     </form>
   );
 }

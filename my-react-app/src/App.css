@@ -1,12 +1,11 @@
-.App {
-  text-align: center;
-  background-color: #ff27ed;
+body {
+  background-color: rgb(255, 115, 199);
 }
 
 h1 {
   text-align: center;
   color: white;
-  
+
   font-size: 70px;
 }
 
@@ -14,28 +13,49 @@ img {
   width: 10%;
 }
 
+.TT {
+  padding-top: 25px;
+  width: 60%;
+}
+
+.card_column {
+  width: 33.33%;
+  display: inline-block;
+}
+
+.card_row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 .search-bar {
-  padding-top: 10px;
-  flex: 1 1 auto;
-  margin: 0 1rem;
   display: flex;
+  align-items: center;
+  background-color: rgb(255, 167, 229);
+  border-radius: 10px;
+  padding: 5px;
 }
 
 .search-bar input {
-  margin: 0 1rem;
-  display: flex;
-  border-radius: 10px;
+  flex: 1;
+  margin-right: 5px;
+  border: none;
+  padding: 5px;
   color: white;
-  background: transparent;
-  border: solid #ccc;
-  border-color: white;
+  background-color: transparent;
 }
 
 .search-bar button {
-  font-size: 18px;
+  font-size: 25px;
   padding: 0;
   border: none;
   background: none;
+  color: white;
+}
+
+.glass {
+  display: inline-block;
 }
 
 .hearted {
@@ -50,4 +70,22 @@ img {
   padding: 0;
   border: none;
   background: none;
+}
+
+.mode {
+  position: right;
+}
+
+.nav {
+  position: center;
+  font-family: Verdana;
+
+  list-style: none;
+  display: flex;
+  /* justify-content: flex-start; */
+  margin: 10px;
+  padding: 15px;
+  /* padding-bottom: 50px; */
+  border-radius: 10px;
+  background: rgb(255, 167, 229);
 }
