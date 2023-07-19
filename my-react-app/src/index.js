@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import Chat from "./Chat";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
@@ -9,6 +10,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Router>
       <App />
+      <Chat />
     </Router>
   </React.StrictMode>,
   document.getElementById("root")

@@ -9,6 +9,8 @@ function Header({
   setMyMatches,
   handleYesClick,
   setShowMatches,
+  handleToggle,
+  isToggled
 }) {
   function handleProfile() {
     setShowProfile(true);
@@ -31,16 +33,20 @@ function Header({
     const newButtonName = showProfile === true ? "Home" : "Make Profile";
     return newButtonName;
   }
+
+  
   return (
-    <div>
+    <div style={{ backgroundColor: isToggled?"#8a220b":"#ff73c7",border:"solid" }}>
       <h1>
         <span className="logo">
           <img className="TT" src={"./techtinder.png"} alt="TechTinder" />
         </span>
       </h1>
-      <button className="mode">Barbie Mode</button>
+      <button className="mode" onClick={handleToggle}>{isToggled?"Barbie Mode": "Oppenheimer Mode"}</button>
 
-      <nav className="nav">
+      <nav className="nav" 
+      style={{backgroundColor: isToggled? "#d56013":"rgb(255, 167, 229)", position:"flex",display: "flex",alignItems: "center",borderRadius: "10px"
+  }} >
         <ul>
           <Link
             to="/"

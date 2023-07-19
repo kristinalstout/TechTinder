@@ -56,17 +56,36 @@ function App() {
 
   const yesMatch = matches.filter((match) => match.interested);
 
+  const [isToggled, setIsToggled] = useState(false);
+  function handleToggle() {
+    setIsToggled(!isToggled);
+  }
+
   return (
-    <div className="app">
+    <div
+      className="app"
+      style={{
+        backgroundColor: isToggled?"#8a220b":"#ff73c7",
+        border: "solid",
+        width: "100vw",
+        height: "100vh",
+      }}
+    >
       <Header
         matches={matches}
         handleYesClick={handleYesClick}
         setShowProfile={setShowProfile}
         setShowHome={setShowHome}
-        // myMatches={myMatches}
         setMyMatches={setMyMatches}
         setShowMatches={setShowMatches}
+        handleToggle={handleToggle}
+        isToggled={isToggled}
       />
+      {/* <iframe
+        src="https://deadsimplechat.com/px9x_pETo"
+        width="400px"
+        height="600px"
+      ></iframe> */}
       <Search handleMatchArray={handleMatchArray} />
       {showProfile ? (
         <Profile />

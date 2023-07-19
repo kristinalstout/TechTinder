@@ -1,6 +1,6 @@
-body {
+/*body {
   background-color: rgb(255, 115, 199);
-}
+}*/
 
 h1 {
   text-align: center;
@@ -29,13 +29,13 @@ img {
   clear: both;
 }
 
-.search-bar {
+/*.search-bar {
   display: flex;
   align-items: center;
   background-color: rgb(255, 167, 229);
   border-radius: 10px;
   padding: 5px;
-}
+}*/
 
 .search-bar input {
   flex: 1;
@@ -76,7 +76,7 @@ img {
   position: right;
 }
 
-.nav {
+/*.nav {
   position: center;
   font-family: Verdana;
   list-style: none;
@@ -86,4 +86,4 @@ img {
   padding: 15px;
   border-radius: 10px;
   background: rgb(255, 167, 229);
-}
+}*/
