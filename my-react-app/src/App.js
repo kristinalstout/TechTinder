@@ -50,7 +50,13 @@ function App() {
     const newMatchArray = matches.filter(
       (match) =>
         match.name.toLowerCase().includes(searchValue.toLowerCase()) ||
-        match.bio.toLowerCase().includes(searchValue.toLowerCase())
+        match.bio.toLowerCase().includes(searchValue.toLowerCase()) ||
+        match.dealbreakers.some((dealbreaker) =>
+          dealbreaker.toLowerCase().includes(searchValue.toLowerCase())
+        ) ||
+        match.interests.some((interest) =>
+          interest.toLowerCase().includes(searchValue.toLowerCase())
+        )
     );
     setMatchArray(newMatchArray);
   }

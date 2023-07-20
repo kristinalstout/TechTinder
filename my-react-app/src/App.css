@@ -4,9 +4,6 @@
 
 h1 {
   text-align: center;
-  color: white;
-
-  font-size: 70px;
 }
 
 img {
@@ -18,40 +15,28 @@ img {
   width: 60%;
 }
 
-.card_column {
-  width: 33.33%;
-  display: inline-block;
-}
-
-.card_row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/*.search-bar {
+.search-bar {
+  flex: 1 1 auto;
+  margin: 0 1rem;
   display: flex;
-  align-items: center;
-  background-color: rgb(255, 167, 229);
-  border-radius: 10px;
-  padding: 5px;
-}*/
+  justify-content: center;
+}
 
 .search-bar input {
-  flex: 1;
-  margin-right: 5px;
-  border: none;
-  padding: 5px;
-  color: white;
-  background-color: transparent;
+  width: 90%;
+  font-size: 1rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding-left: 0.5rem;
 }
 
 .search-bar button {
-  font-size: 25px;
-  padding: 0;
-  border: none;
+  font-size: 20px;
   background: none;
-  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 .glass {
@@ -63,6 +48,7 @@ img {
   padding: 0;
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .unhearted {
@@ -70,20 +56,18 @@ img {
   padding: 0;
   border: none;
   background: none;
+  cursor: pointer;
 }
 
 .mode {
   position: right;
+  cursor: pointer;
 }
 
-/*.nav {
-  position: center;
-  font-family: Verdana;
-  list-style: none;
-  display: flex;
-  justify-content: flex-start;
-  margin: 10px;
-  padding: 15px;
-  border-radius: 10px;
-  background: rgb(255, 167, 229);
-}*/
+.card {
+  padding: 10px;
+  box-shadow: 0 0 7px 0 #620840;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 350px;
+}

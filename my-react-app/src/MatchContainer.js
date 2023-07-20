@@ -10,7 +10,6 @@ function MatchContainer({
   handleToggle,
   isToggled,
 }) {
-  console.log(yesMatch);
   function renderMatches() {
     if (showMatches) {
       return yesMatch.map((match) => {

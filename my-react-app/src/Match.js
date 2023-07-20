@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-// import Chat from "./Chat";
 
 function Match({
   match,
@@ -30,7 +29,7 @@ function Match({
   };
 
   return (
-    <ul className="cards_item">
+    <ul className="cards">
       <div
         className="card"
         style={{
@@ -38,16 +37,12 @@ function Match({
           border: "solid",
         }}
       >
-        <img
-          src={match.image}
-          alt={"Your next soulmate"}
-          className="card_image"
-        />
+        <img src={match.image} alt={"Your next soulmate"} className="image" />
         <div className="card_row">
           <div className="card_column">
-            <div className="card_title">{match.name}</div>
+            <h4 className="card_title">{match.name}</h4>
             <div className="card_bio">
-              <h4>{match.city}</h4>
+              <p>{match.city}</p>
               <p>{match.bio}</p>
               <p>Interests: {match.interests}</p>
               <em>*Dealbreaker: {match.dealbreakers}*</em>
@@ -71,7 +66,11 @@ function Match({
         ) : (
           <button onClick={(e) => toggleChatButton()}>Let's Chat</button>
         )}
-
+      </div>
+      <div>
+        <button className="no" onClick={handleNoClick}>
+          ❌
+        </button>
         {heart ? (
           <button className="hearted" onClick={toggleHeart}>
             💖
@@ -81,11 +80,6 @@ function Match({
             ♡
           </button>
         )}
-      </div>
-      <div>
-        <button className="no" onClick={handleNoClick}>
-          ❌
-        </button>
         <button className="yes" onClick={(e) => handleYesClick(match)}>
           ✔️
         </button>
