@@ -7,6 +7,8 @@ function MatchContainer({
   handleYesClick,
   showMatches,
   yesMatch,
+  handleToggle,
+  isToggled
 }) {
   console.log(yesMatch);
   function renderMatches() {
@@ -18,6 +20,8 @@ function MatchContainer({
               match={match}
               handleDeleteMatch={handleDeleteMatch}
               handleYesClick={handleYesClick}
+              handleToggle={handleToggle}
+              isToggled={isToggled}
             />
           </div>
         );
@@ -30,6 +34,8 @@ function MatchContainer({
               match={match}
               handleDeleteMatch={handleDeleteMatch}
               handleYesClick={handleYesClick}
+              handleToggle={handleToggle}
+              isToggled={isToggled}
             />
           </div>
         );

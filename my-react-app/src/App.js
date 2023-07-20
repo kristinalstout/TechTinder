@@ -96,6 +96,8 @@ function App() {
           handleYesClick={handleYesClick}
           showMatches={showMatches}
           yesMatch={yesMatch}
+          handleToggle={handleToggle}
+          isToggled={isToggled}
         />
       )}
     </div>

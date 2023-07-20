@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Match({ match, handleDeleteMatch, handleYesClick }) {
+function Match({ match, handleDeleteMatch, handleYesClick, handleToggle, isToggled }) {
   const [heart, setHeart] = useState(false);
   const [interested, setInterested] = useState(false);
   const [matches, setMatches] = useState([]);
@@ -19,7 +19,7 @@ function Match({ match, handleDeleteMatch, handleYesClick }) {
 
   return (
     <ul className="cards_item">
-      <div className="card">
+      <div className="card" style={{ backgroundColor: isToggled?"#8a220b":"#ff73c7",border:"solid" }}>
         <img
           src={match.image}
           alt={"Your next soulmate"}

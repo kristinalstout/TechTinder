@@ -15,7 +15,10 @@
       "image": "https://deadline.com/wp-content/uploads/2023/05/barbie-ryan-gosling-ken.jpg",
       "bio": "Just Ken! If I stand outside in the sun too long, I'll melt",
       "city": "Barbieland",
-      "interests": ["Barbie","Rollerskating"],
+      "interests": [
+        "Barbie",
+        "Rollerskating"
+      ],
       "dealbreakers": "Not Barbie"
     },
     {
