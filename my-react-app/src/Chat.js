@@ -13,14 +13,13 @@ function Chat() {
 
 export default Chat;
 
-
-
 // To Do:
 // Toggle button to barbie v. Oppenheimer
-// Profile side by side in the home page 
+// Profile side by side in the home page
 // Constantly show up on the right page
 // Submit profile to whole page
-// Allow to choose pictures/choose interests and dealbreakers so we can filter with other people?
+// Allow to choose pictures/choose interests and dealbreakers so we can
+                                          // filter with other people?
 // Set matches into columns
 // Install hook/dependency into chat button
 // When we like someone, have it show as superlike

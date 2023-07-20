@@ -90,7 +90,7 @@ function App() {
       />
       <Search handleMatchArray={handleMatchArray} />
       {showProfile ? (
-        <Profile />
+        <Profile setMatches={setMatches} />
       ) : (
         <MatchContainer
           matches={matchArray}

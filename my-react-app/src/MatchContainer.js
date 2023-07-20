@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import NextButton from "./NextButton";
 import Match from "./Match";
 
 function MatchContainer({
@@ -10,6 +11,25 @@ function MatchContainer({
   handleToggle,
   isToggled,
 }) {
+  const [matchIndex, setMatchIndex] = useState(0);
+
+  const matchCards = matches
+    .slice(matchIndex, setMatchIndex + 2)
+    .map((match) => (
+      <Match
+        match={match}
+        handleDeleteMatch={handleDeleteMatch}
+        handleYesClick={handleYesClick}
+        handleToggle={handleToggle}
+        isToggled={isToggled}
+      />
+    ));
+
+  function nextButton() {
+    setMatchIndex((matchIndex) => (matchIndex + 2) % matches.length);
+    console.log("next");
+  }
+
   function renderMatches() {
     if (showMatches) {
       return yesMatch.map((match) => {
@@ -42,8 +62,28 @@ function MatchContainer({
     }
   }
 
-  return <ul className="cards">{renderMatches()}</ul>;
+  return (
+    <div className="next">
+      {matchCards}
+      <NextButton nextButton={nextButton} />
+      <ul className="cards">{renderMatches()}</ul>;
+    </div>
+  );
 }
+
 export default MatchContainer;
 
-//?raw=true
+// !yesMatch
+
+// const uncheckedMatches = matches.filter((!yesMatch)
+//        return uncheckedMatches.map((match) => {
+
+//    })
+
+// if (!interested) {
+
+// }
+
+// if (yesMatch) {
+//  return !showMatches
+//   }
