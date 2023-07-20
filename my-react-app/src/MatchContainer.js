@@ -26,7 +26,7 @@ function MatchContainer({
     ));
 
   function nextButton() {
-    setMatchIndex((matchIndex) => (matchIndex + 2) % matches.length);
+    setMatchIndex((matchIndex) => (matchIndex + 1) % matches.length);
     console.log("next");
   }
 

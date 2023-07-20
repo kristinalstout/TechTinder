@@ -1,6 +1,6 @@
-/*body {
+body {
   background-color: rgb(255, 115, 199);
-}*/
+}
 
 h1 {
   text-align: center;
@@ -45,23 +45,51 @@ img {
 
 .hearted {
   font-size: 25px;
-  padding: 0;
-  border: none;
+  padding: 5px;
+  border-radius: 100%;
+  border: 2px rgb(255, 14, 199);
   background: none;
   cursor: pointer;
 }
 
 .unhearted {
-  font-size: 25px;
-  padding: 0;
-  border: none;
-  background: none;
+  font-size: 20px;
+  margin: 4px;
+  border-radius: 100%;
+  border: 2px rgb(255, 14, 199);
   cursor: pointer;
 }
 
 .mode {
   position: right;
   cursor: pointer;
+}
+
+.no {
+  font-size: 20px;
+  margin: 4px;
+  border-radius: 50%;
+  border: rgb(255, 14, 199);
+  cursor: pointer;
+}
+
+.yes {
+  font-size: 24px;
+  margin: 4px;
+  border-radius: 50%;
+  border: rgb(255, 14, 199);
+  cursor: pointer;
+}
+
+.chat {
+  font-size: 15px;
+  color: white;
+  background-color: rgb(204, 0, 133);
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .card {

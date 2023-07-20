@@ -34,7 +34,7 @@ function Match({
         className="card"
         style={{
           backgroundColor: isToggled ? "#8a220b" : "#ff73c7",
-          border: "solid",
+          // border: "solid",
         }}
       >
         <img src={match.image} alt={"Your next soulmate"} className="image" />
@@ -45,44 +45,40 @@ function Match({
               <p>{match.city}</p>
               <p>{match.bio}</p>
               <p>Interests: {match.interests}</p>
-              <em>*Dealbreaker: {match.dealbreakers}*</em>
+              <em className="breaker">*Dealbreaker: {match.dealbreakers}*</em>
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              {showChat ? (
+                <div className="chat">
+                  <button onClick={toggleChatButton}>Close Chat</button>
+                  <iframe
+                    src="https://deadsimplechat.com/px9x_pETo"
+                    width="400px"
+                    height="400px"
+                  ></iframe>
+                </div>
+              ) : (
+                <button className="chat" onClick={(e) => toggleChatButton()}>
+                  Chat
+                </button>
+              )}
+              <button className="no" onClick={handleNoClick}>
+                ❌
+              </button>
+              {heart ? (
+                <button className="hearted" onClick={toggleHeart}>
+                  💖
+                </button>
+              ) : (
+                <button className="unhearted" onClick={toggleHeart}>
+                  ♡
+                </button>
+              )}
+              <button className="yes" onClick={(e) => handleYesClick(match)}>
+                ✔️
+              </button>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="card_detail">
-        {showChat ? (
-          <div>
-            <button onClick={toggleChatButton} className="Chat">
-              Close Chat
-            </button>
-            <iframe
-              src="https://deadsimplechat.com/px9x_pETo"
-              width="400px"
-              height="400px"
-            ></iframe>
-          </div>
-        ) : (
-          <button onClick={(e) => toggleChatButton()}>Let's Chat</button>
-        )}
-      </div>
-      <div>
-        <button className="no" onClick={handleNoClick}>
-          ❌
-        </button>
-        {heart ? (
-          <button className="hearted" onClick={toggleHeart}>
-            💖
-          </button>
-        ) : (
-          <button className="unhearted" onClick={toggleHeart}>
-            ♡
-          </button>
-        )}
-        <button className="yes" onClick={(e) => handleYesClick(match)}>
-          ✔️
-        </button>
       </div>
     </ul>
   );
