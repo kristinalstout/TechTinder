@@ -5,6 +5,7 @@ import Header from "./Header";
 import Search from "./Search";
 import Match from "./Match";
 import Profile from "./Profile";
+import Chat from "./Chat";
 import "./App.css";
 
 function App() {
@@ -65,7 +66,7 @@ function App() {
     <div
       className="app"
       style={{
-        backgroundColor: isToggled?"#8a220b":"#ff73c7",
+        backgroundColor: isToggled ? "#8a220b" : "#ff73c7",
         border: "solid",
         width: "100vw",
         height: "100vh",
@@ -81,11 +82,6 @@ function App() {
         handleToggle={handleToggle}
         isToggled={isToggled}
       />
-      {/* <iframe
-        src="https://deadsimplechat.com/px9x_pETo"
-        width="400px"
-        height="600px"
-      ></iframe> */}
       <Search handleMatchArray={handleMatchArray} />
       {showProfile ? (
         <Profile />

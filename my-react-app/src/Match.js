@@ -1,9 +1,17 @@
 import React, { useState } from "react";
+// import Chat from "./Chat";
 
-function Match({ match, handleDeleteMatch, handleYesClick, handleToggle, isToggled }) {
+function Match({
+  match,
+  handleDeleteMatch,
+  handleYesClick,
+  handleToggle,
+  isToggled,
+}) {
   const [heart, setHeart] = useState(false);
   const [interested, setInterested] = useState(false);
   const [matches, setMatches] = useState([]);
+  const [showChat, setShowChat] = useState(false);
 
   function handleNoClick(id) {
     fetch(`http://localhost:3000/matches/${match.id}`, {
@@ -17,9 +25,19 @@ function Match({ match, handleDeleteMatch, handleYesClick, handleToggle, isToggl
     setHeart(!heart);
   };
 
+  const toggleChatButton = () => {
+    setShowChat(!showChat);
+  };
+
   return (
     <ul className="cards_item">
-      <div className="card" style={{ backgroundColor: isToggled?"#8a220b":"#ff73c7",border:"solid" }}>
+      <div
+        className="card"
+        style={{
+          backgroundColor: isToggled ? "#8a220b" : "#ff73c7",
+          border: "solid",
+        }}
+      >
         <img
           src={match.image}
           alt={"Your next soulmate"}
@@ -37,8 +55,23 @@ function Match({ match, handleDeleteMatch, handleYesClick, handleToggle, isToggl
           </div>
         </div>
       </div>
+
       <div className="card_detail">
-        <button className="chat">Let's Chat!</button>
+        {showChat ? (
+          <div>
+            <button onClick={toggleChatButton} className="Chat">
+              Close Chat
+            </button>
+            <iframe
+              src="https://deadsimplechat.com/px9x_pETo"
+              width="400px"
+              height="400px"
+            ></iframe>
+          </div>
+        ) : (
+          <button onClick={(e) => toggleChatButton()}>Let's Chat</button>
+        )}
+
         {heart ? (
           <button className="hearted" onClick={toggleHeart}>
             💖

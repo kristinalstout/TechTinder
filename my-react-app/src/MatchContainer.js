@@ -8,7 +8,7 @@ function MatchContainer({
   showMatches,
   yesMatch,
   handleToggle,
-  isToggled
+  isToggled,
 }) {
   console.log(yesMatch);
   function renderMatches() {
