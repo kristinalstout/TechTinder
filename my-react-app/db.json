@@ -6,8 +6,12 @@
       "image": "https://learning.flatironschool.com/courses/6459/files/4136221/preview",
       "bio": "I love to code. I'm recovering from recent heartbreak, I need a shoulder to cry on.",
       "city": "Austin, TX",
-      "interests": ["Video Games"],
-      "dealbreakers": ["Getting asked the same question repeatedly"],
+      "interests": [
+        "Video Games"
+      ],
+      "dealbreakers": [
+        "Getting asked the same question repeatedly"
+      ],
       "interested": false
     },
     {
@@ -49,6 +53,17 @@
       "interests": "Owning things",
       "dealbreakers": "A lot, probably",
       "interested": false
+    }
+  ],
+  "MyProfile": [
+    {
+      "profile_name": "Grimace",
+      "profile_image": "https://gumlet.assettype.com/bloombergquint/2023-06/1ff74842-ac21-4db2-90a2-8b5dc2b9dad9/grimace_shake.jpg",
+      "profile_bio": "Do I need an introduction?",
+      "profile_city": "Your local McDonald's, I will find you",
+      "profile_interests": "Yum",
+      "profile_dealbreakers": "Try my shake",
+      "id": 1
     }
   ]
 }

@@ -8,6 +8,7 @@ import Profile from "./Profile";
 import Chat from "./Chat";
 import "./App.css";
 import { Routes, Route, Outlet } from "react-router-dom";
+import ShowProfile from "./ShowProfile";
 
 function App() {
   const [matches, setMatches] = useState([]);
@@ -47,7 +48,7 @@ function App() {
     }
   }
 
-  function handleMatchArray(searchValue) {
+
     const newMatchArray = matches.filter(
       (match) =>
         match.name.toLowerCase().includes(searchValue.toLowerCase()) ||
@@ -59,8 +60,7 @@ function App() {
           interest.toLowerCase().includes(searchValue.toLowerCase())
         )
     );
-    setMatchArray(newMatchArray);
-  }
+  
 
   const yesMatch = matches.filter((match) => match.interested);
 
@@ -69,6 +69,37 @@ function App() {
     setIsToggled(!isToggled);
   }
 
+  const initialProfile ={
+    profile_name:"",
+    profile_image:"",
+    profile_bio:"",
+    profile_city:"",
+    profile_interests:"",
+    profile_dealbreakers:""
+    }
+
+  const [newProfile,setNewProfile] = useState(initialProfile);
+  const [myProfile,setMyProfile] = useState([])
+  const [showNewProfile,setShowNewProfile] = useState(false);
+
+  function handleProfileToggle(){
+    setShowNewProfile(!showNewProfile);
+  }
+  useEffect(()=>{
+    fetch("http://localhost:3000/MyProfile")
+    .then((res) => res.json())
+    .then((data) => {setMyProfile(data)})
+  },[])
+  //myProfile
+  const mapProfile = myProfile.map((YouProfile)=>{
+    return (
+      <ShowProfile handleProfileToggle={handleProfileToggle} YourProfile={YouProfile} isToggled={isToggled}/>
+    )
+  })
+    // const mapProfile = newProfile.map((YourProfile)=> (
+    //   <ShowProfile handleProfileToggle={handleProfileToggle} YourProfile={YourProfile} isToggled={isToggled}/>
+    // ))
+  
   return (
     <div
       className="app"
@@ -89,7 +120,10 @@ function App() {
         handleToggle={handleToggle}
         isToggled={isToggled}
       />
-      <Search handleMatchArray={handleMatchArray} />
+      <Search setSearchValue={setSearchValue} />
+      <div style = {{position:"absolute",left:"1318px",top:"388.8px"}}>{mapProfile}</div>
+      {/* {newProfile==={}? null :null} */}
+      {/* ternary for show profile on screen, should show throughout the app */}
       <Routes>
         <Route
           path="/"
@@ -102,11 +136,12 @@ function App() {
               yesMatch={yesMatch}
               handleToggle={handleToggle}
               isToggled={isToggled}
+              newMatchArray={newMatchArray}
             />
           }
         />
 
-        <Route path="/profile" element={<Profile setMatches={setMatches} />} />
+        <Route path="/profile" element={<Profile setNewProfile={setNewProfile} newProfile={newProfile}/>} />
         <Route
           path="/Matches"
           element={
@@ -139,5 +174,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

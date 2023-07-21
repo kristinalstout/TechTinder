@@ -99,7 +99,9 @@ img {
   border-radius: 20px;
   border: 3px solid #cd066d;
   width: 350px;
+  height:420px;
   background-color: rgb(255, 201, 240);
+  display:grid;
 }
 
 .name {
@@ -107,6 +109,7 @@ img {
   padding-top: 10px;
   padding-bottom: 8px;
   font-size: 22px;
+ 
 }
 
 .city {

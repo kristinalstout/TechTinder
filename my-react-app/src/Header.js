@@ -42,7 +42,7 @@ function Header({
           <img className="TT" src={"./techtinder.png"} alt="TechTinder" />
         </span>
       </h1>
-      <button className="mode" onClick={handleToggle}>{isToggled?"Barbie Mode": "Oppenheimer Mode"}</button>
+      <button className="mode" onClick={handleToggle}style={{backgroundColor:"rgb(141,205,237)",color:"rgb(217,105,155)",borderRadius:"50px",textShadow:"0 0 10px white"}}>{isToggled?"Barbie Mode": "Oppenheimer Mode"}</button>
 
       <nav className="nav" 
       style={{backgroundColor: isToggled? "#d56013":"rgb(255, 167, 229)", position:"flex",display: "flex",alignItems: "center",borderRadius: "10px"

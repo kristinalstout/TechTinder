@@ -27,7 +27,7 @@ function Match({
   const toggleChatButton = () => {
     setShowChat(!showChat);
   };
-
+  
   return (
     <ul className="cards">
       <div
@@ -37,15 +37,16 @@ function Match({
           // border: "solid",
         }}
       >
-        <img src={match.image} alt={"Your next soulmate"} className="image" />
+        
         <div className="card_row">
+        <img src={match.image} alt={"Your next soulmate"} className="image" style={{height:"162px",width:"162px"}}/>
           <div className="card_column">
             <h4 className="name">{match.name}</h4>
 
             <div>
               <p className="city">{match.city}</p>
               <p>{match.bio}</p>
-              <p>Interests: {match.interests}</p>
+              <p><strong>Interests:</strong> {match.interests}</p>
               <em className="breaker">*Dealbreaker: {match.dealbreakers}*</em>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               {showChat ? (

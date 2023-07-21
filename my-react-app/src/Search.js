@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Search({ handleMatchArray }) {
-  const handleChange = (e) => {
-    const searchValue = e.target.value;
-    return handleMatchArray(searchValue);
-  };
+function Search({setSearchValue}) {
+  
+  function handleChange(e) {
+    setSearchValue(e.target.value);
+  }
 
   return (
     <form className="search-bar">

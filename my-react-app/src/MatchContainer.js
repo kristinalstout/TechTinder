@@ -10,11 +10,12 @@ function MatchContainer({
   yesMatch,
   handleToggle,
   isToggled,
+  newMatchArray
 }) {
   const [matchIndex, setMatchIndex] = useState(0);
 
   const matchCards = matches
-    .slice(matchIndex, setMatchIndex + 2)
+    .slice(matchIndex, matchIndex + 1)
     .map((match) => (
       <Match
         match={match}
@@ -24,15 +25,16 @@ function MatchContainer({
         isToggled={isToggled}
       />
     ));
-
+     
   function nextButton() {
-    setMatchIndex((matchIndex) => (matchIndex + 1) % matches.length);
+    setMatchIndex((matchIndex) => (matchIndex + 1) );//% matches.length
     console.log("next");
   }
-
+console.log(matches);
+console.log(matchIndex)
   function renderMatches() {
   
-      return matches.map((match) => {
+      return newMatchArray.map((match) => {
         return (
           <div key={`match-${match.id}`}>
             <Match
@@ -51,7 +53,7 @@ function MatchContainer({
     <div className="next">
       {matchCards}
       <NextButton nextButton={nextButton} />
-      <ul className="cards">{renderMatches()}</ul>;
+      {/* <ul className="cards">{renderMatches()}</ul>; */}
     </div>
   );
 }
