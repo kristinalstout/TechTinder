@@ -1,23 +1,17 @@
 {
   "matches": [
     {
-      "id": 2,
-      "name": "KEN",
-      "image": "https://deadline.com/wp-content/uploads/2023/05/barbie-ryan-gosling-ken.jpg",
-      "bio": "Just Ken! If I stand outside in the sun too long, I'll melt",
-      "city": "Barbieland",
-      "interests": "Barbie",
-      "dealbreakers": "Not Barbie",
-      "interested": false
-    },
-    {
-      "id": 3,
-      "name": "ANTONIO",
-      "image": "https://learning.flatironschool.com/courses/6459/files/4136220/preview",
-      "bio": "Catch me out delivering pizzas at Flatiron Pizzeria! Also, I'm taken already.",
+      "id": 1,
+      "name": "DJ",
+      "image": "https://learning.flatironschool.com/courses/6459/files/4136221/preview",
+      "bio": "I love to code. I'm recovering from recent heartbreak, I need a shoulder to cry on.",
       "city": "Austin, TX",
-      "interests": "My kids, only some Marvel Movies",
-      "dealbreakers": "Doesn't want to get married after 2 weeks of dating",
+      "interests": [
+        "Video Games"
+      ],
+      "dealbreakers": [
+        "Getting asked the same question repeatedly"
+      ],
       "interested": false
     },
     {
@@ -32,22 +26,22 @@
     },
     {
       "id": 5,
-      "name": "WILL",
-      "image": "https://sportshub.cbsistatic.com/i/2022/04/11/5469eacf-2d52-4d8b-ac17-c3cd7f8f9d13/will-ferrell-barbie-live-action-movie-cast.jpg",
-      "bio": "I'm just a silly goofy guy looking to find tru luv. I'm currently the CEO of Mattel, but you may know me as Ricky Bobby or Mugatu",
-      "city": "Amsterdam, Netherlands",
-      "interests": "Owning things",
-      "dealbreakers": "A lot, probably",
+      "name": "BARBIE #2",
+      "image": "https://www.slashfilm.com/img/gallery/how-the-giver-inspired-kate-mckinnons-character-in-barbie/intro-1689271955.webp",
+      "bio": "CAN YOU DO THIS SPLITS???",
+      "city": "LaLaLand",
+      "interests": "CHAOS",
+      "dealbreakers": "YOU CAN'T DO THE SPLITS",
       "interested": false
     },
     {
       "id": 6,
-      "name": "BARBIE #2",
-      "image": "https://www.slashfilm.com/img/gallery/how-the-giver-inspired-kate-mckinnons-character-in-barbie/intro-1689271955.webp",
-      "bio": "CAN YOU DO THIS SPLITS",
-      "city": "LaLaLand",
-      "interests": "CHAOS",
-      "dealbreakers": "YOU CAN'T DO THE SPLITS",
+      "name": "GRANT",
+      "image": "./Screen Shot 2023-07-21 at 1.29.34 PM.png",
+      "bio": "I make sick monster stuff and fix any code. Ask me about my goblin voice",
+      "city": "Zoomland",
+      "interests": "DND",
+      "dealbreakers": "none",
       "interested": false
     }
   ],
