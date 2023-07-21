@@ -6,7 +6,7 @@ function ShowProfile({YourProfile,showNewProfile,handleProfileToggle,isToggled})
     return(
         <div
         style={{
-          backgroundColor: isToggled ? "#8a220b" : "#ff73c7",boxShadow: "0 0 7px 0 #620840",borderRadius: "20px",border:"3px solid #cd066d",width:"350px",height:"420px",display:"grid",position:"relative",color:"white"
+          backgroundColor: isToggled ? "#8a220b" : "#ff73c7",boxShadow: "0 0 7px 0 #620840",borderRadius: "20px",width:"350px",height:"420px",display:"grid",position:"relative",color:"white",border: isToggled? "3px solid red": "3px solid #cd066d"
           // border: "solid",
         }}
       >

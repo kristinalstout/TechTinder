@@ -1,20 +1,6 @@
 {
   "matches": [
     {
-      "id": 1,
-      "name": "DJ",
-      "image": "https://learning.flatironschool.com/courses/6459/files/4136221/preview",
-      "bio": "I love to code. I'm recovering from recent heartbreak, I need a shoulder to cry on.",
-      "city": "Austin, TX",
-      "interests": [
-        "Video Games"
-      ],
-      "dealbreakers": [
-        "Getting asked the same question repeatedly"
-      ],
-      "interested": false
-    },
-    {
       "id": 2,
       "name": "KEN",
       "image": "https://deadline.com/wp-content/uploads/2023/05/barbie-ryan-gosling-ken.jpg",
@@ -52,6 +38,16 @@
       "city": "Amsterdam, Netherlands",
       "interests": "Owning things",
       "dealbreakers": "A lot, probably",
+      "interested": false
+    },
+    {
+      "id": 6,
+      "name": "BARBIE #2",
+      "image": "https://www.slashfilm.com/img/gallery/how-the-giver-inspired-kate-mckinnons-character-in-barbie/intro-1689271955.webp",
+      "bio": "CAN YOU DO THIS SPLITS",
+      "city": "LaLaLand",
+      "interests": "CHAOS",
+      "dealbreakers": "YOU CAN'T DO THE SPLITS",
       "interested": false
     }
   ],

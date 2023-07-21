@@ -1,9 +1,13 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-function Search({setSearchValue}) {
-  
+function Search({ setSearchValue, setSearching, setMatchArray, searchValue }) {
   function handleChange(e) {
+    if (searchValue === " ") {
+      setMatchArray([]);
+    }
+    e.preventDefault();
     setSearchValue(e.target.value);
+    setSearching(true);
   }
 
   return (
@@ -12,7 +16,7 @@ function Search({setSearchValue}) {
         type="text"
         id="search"
         placeholder="search..."
-        style={{ color: "white" }}
+        style={{ color: "black" }}
         onChange={handleChange}
       />
       <button className="glass" type="submit">
@@ -23,4 +27,4 @@ function Search({setSearchValue}) {
 }
 
 export default Search;
-// 
+//

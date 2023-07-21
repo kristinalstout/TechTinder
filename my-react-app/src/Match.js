@@ -6,6 +6,7 @@ function Match({
   handleYesClick,
   handleToggle,
   isToggled,
+  nextButton,
 }) {
   const [heart, setHeart] = useState(false);
   const [interested, setInterested] = useState(false);
@@ -17,7 +18,10 @@ function Match({
       method: "DELETE",
     })
       .then((res) => res.json())
-      .then(() => handleDeleteMatch(match));
+      .then(() => {
+        handleDeleteMatch(match);
+        nextButton();
+      });
   }
 
   const toggleHeart = () => {
@@ -27,30 +31,36 @@ function Match({
   const toggleChatButton = () => {
     setShowChat(!showChat);
   };
-  
+
   return (
     <ul className="cards">
       <div
         className="card"
         style={{
-          backgroundColor: isToggled ? "#8a220b" : "#ff73c7",
+          backgroundColor: isToggled ? "#8a220b" : "#ff73c7",  border: isToggled? "3px solid red": "3px solid #cd066d",
           // border: "solid",
         }}
       >
-        
         <div className="card_row">
-        <img src={match.image} alt={"Your next soulmate"} className="image" style={{height:"162px",width:"162px"}}/>
+          <img
+            src={match.image}
+            alt={"Your next soulmate"}
+            className="image"
+            style={{ height: "162px", width: "auto" }}
+          />
           <div className="card_column">
             <h4 className="name">{match.name}</h4>
 
             <div>
               <p className="city">{match.city}</p>
               <p>{match.bio}</p>
-              <p><strong>Interests:</strong> {match.interests}</p>
+              <p>
+                <strong>Interests:</strong> {match.interests}
+              </p>
               <em className="breaker">*Dealbreaker: {match.dealbreakers}*</em>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               {showChat ? (
-                <div className="chat">
+                <div className="chat" >
                   <button onClick={toggleChatButton}>Close Chat</button>
                   <iframe
                     src="https://deadsimplechat.com/px9x_pETo"
@@ -59,7 +69,7 @@ function Match({
                   ></iframe>
                 </div>
               ) : (
-                <button className="chat" onClick={(e) => toggleChatButton()}>
+                <button className="chat" onClick={(e) => toggleChatButton()} style={{backgroundColor: isToggled? "#ae631f":"rgb(204, 0, 133"}}>
                   Chat
                 </button>
               )}

@@ -13,8 +13,8 @@ function LikedMatches({
 }) {
   const [matchIndex, setMatchIndex] = useState(0);
 
-  const matchCards = matches
-    .slice(matchIndex, setMatchIndex + 2)
+  const matchCards = yesMatch
+    .slice(matchIndex, matchIndex +1)
     .map((match) => (
       <Match
         match={match}
@@ -26,7 +26,7 @@ function LikedMatches({
     ));
 
   function nextButton() {
-    setMatchIndex((matchIndex) => (matchIndex + 1) % matches.length);
+    setMatchIndex((matchIndex) => (matchIndex + 1)%yesMatch.length);
     console.log("next");
   }
 
@@ -50,7 +50,7 @@ function LikedMatches({
     <div className="next">
       {matchCards}
       <NextButton nextButton={nextButton} />
-      <ul className="cards">{renderMatches()}</ul>;
+      {/* <ul className="cards">{renderMatches()}</ul>; */}
     </div>
   );
 }

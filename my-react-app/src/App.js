@@ -18,6 +18,7 @@ function App() {
   const [showHome, setShowHome] = useState(true);
   const [myMatches, setMyMatches] = useState([]);
   const [showMatches, setShowMatches] = useState(false);
+  const [searching, setSearching] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:3000/matches")
@@ -32,11 +33,12 @@ function App() {
   }, []);
 
   function handleDeleteMatch(deletedMatch) {
-    const updatedMatches = matches.filter(
+    const updatedMatches = matchArray.filter(
       (match) => match.id !== deletedMatch.id
     );
-    setMatches(updatedMatches);
+    // setMatches(updatedMatches);
     setMatchArray(updatedMatches);
+    console.log(updatedMatches);
   }
 
   function handleYesClick(yesMatch) {
@@ -47,59 +49,64 @@ function App() {
       setMatches([...matches, { ...yesMatch, interested: true }]);
     }
   }
-
-
-    const newMatchArray = matches.filter(
-      (match) =>
-        match.name.toLowerCase().includes(searchValue.toLowerCase()) ||
-        match.bio.toLowerCase().includes(searchValue.toLowerCase()) ||
-        match.dealbreakers.some((dealbreaker) =>
-          dealbreaker.toLowerCase().includes(searchValue.toLowerCase())
-        ) ||
-        match.interests.some((interest) =>
-          interest.toLowerCase().includes(searchValue.toLowerCase())
-        )
-    );
-  
+  console.log(matchArray);
+  const newMatchArray = matchArray.filter(
+    (match) =>
+      match.name.toLowerCase().includes(searchValue.toLowerCase()) ||
+      match.bio.toLowerCase().includes(searchValue.toLowerCase())
+    // match.dealbreakers.some((dealbreaker) =>
+    //   dealbreaker.toLowerCase().includes(searchValue.toLowerCase())
+    // ) ||
+    // match.interests.some((interest) =>
+    //   interest.toLowerCase().includes(searchValue.toLowerCase())
+    // )
+  );
 
   const yesMatch = matches.filter((match) => match.interested);
+  console.log(newMatchArray);
 
   const [isToggled, setIsToggled] = useState(false);
   function handleToggle() {
     setIsToggled(!isToggled);
   }
 
-  const initialProfile ={
-    profile_name:"",
-    profile_image:"",
-    profile_bio:"",
-    profile_city:"",
-    profile_interests:"",
-    profile_dealbreakers:""
-    }
+  const initialProfile = {
+    profile_name: "",
+    profile_image: "",
+    profile_bio: "",
+    profile_city: "",
+    profile_interests: "",
+    profile_dealbreakers: "",
+  };
 
-  const [newProfile,setNewProfile] = useState(initialProfile);
-  const [myProfile,setMyProfile] = useState([])
-  const [showNewProfile,setShowNewProfile] = useState(false);
+  const [newProfile, setNewProfile] = useState(initialProfile);
+  const [myProfile, setMyProfile] = useState([]);
+  const [showNewProfile, setShowNewProfile] = useState(false);
 
-  function handleProfileToggle(){
+  function handleProfileToggle() {
     setShowNewProfile(!showNewProfile);
   }
-  useEffect(()=>{
+  useEffect(() => {
     fetch("http://localhost:3000/MyProfile")
-    .then((res) => res.json())
-    .then((data) => {setMyProfile(data)})
-  },[])
+      .then((res) => res.json())
+      .then((data) => {
+        setMyProfile(data);
+      });
+  }, [myProfile]);
   //myProfile
-  const mapProfile = myProfile.map((YouProfile)=>{
+  const mapProfile = myProfile.map((YouProfile) => {
     return (
-      <ShowProfile handleProfileToggle={handleProfileToggle} YourProfile={YouProfile} isToggled={isToggled}/>
-    )
-  })
-    // const mapProfile = newProfile.map((YourProfile)=> (
-    //   <ShowProfile handleProfileToggle={handleProfileToggle} YourProfile={YourProfile} isToggled={isToggled}/>
-    // ))
-  
+      <ShowProfile
+        handleProfileToggle={handleProfileToggle}
+        YourProfile={YouProfile}
+        isToggled={isToggled}
+      />
+    );
+  });
+  // const mapProfile = newProfile.map((YourProfile)=> (
+  //   <ShowProfile handleProfileToggle={handleProfileToggle} YourProfile={YourProfile} isToggled={isToggled}/>
+  // ))
+
   return (
     <div
       className="app"
@@ -120,8 +127,15 @@ function App() {
         handleToggle={handleToggle}
         isToggled={isToggled}
       />
-      <Search setSearchValue={setSearchValue} />
-      <div style = {{position:"absolute",left:"1318px",top:"388.8px"}}>{mapProfile}</div>
+      <Search
+        setSearchValue={setSearchValue}
+        searchValue={searchValue}
+        setSearching={setSearching}
+        setMatchArray={setMatchArray}
+      />
+      <div style={{ position: "absolute", left: "800px", top: "340px" }}>
+        {mapProfile}
+      </div>
       {/* {newProfile==={}? null :null} */}
       {/* ternary for show profile on screen, should show throughout the app */}
       <Routes>
@@ -137,11 +151,17 @@ function App() {
               handleToggle={handleToggle}
               isToggled={isToggled}
               newMatchArray={newMatchArray}
+              searching={searching}
             />
           }
         />
 
-        <Route path="/profile" element={<Profile setNewProfile={setNewProfile} newProfile={newProfile}/>} />
+        <Route
+          path="/profile"
+          element={
+            <Profile setNewProfile={setNewProfile} newProfile={newProfile} />
+          }
+        />
         <Route
           path="/Matches"
           element={
@@ -174,6 +194,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;
