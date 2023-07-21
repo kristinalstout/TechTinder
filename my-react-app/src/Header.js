@@ -50,28 +50,19 @@ function Header({
         <ul>
           <Link
             to="/"
-            onClick={() => {
-              setShowMatches(false);
-              handleHome();
-            }}
             className="nav_bar"
           >
             Home
           </Link>
         </ul>
         <ul>
-          <Link to="/profile" onClick={handleProfile} className="nav_bar">
+          <Link to="/profile" className="nav_bar">
             Make a Profile
           </Link>
         </ul>
         <ul>
           <Link
             to="/matches"
-            onClick={() => {
-              setShowMatches(true);
-              setShowHome(false);
-              setShowProfile(false);
-            }}
             className="nav_bar"
           >
             Your Matches

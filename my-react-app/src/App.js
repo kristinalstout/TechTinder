@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Switch, Route } from "react-router-dom";
 import MatchContainer from "./MatchContainer";
+import LikedMatches from "./LikedMatches";
 import Header from "./Header";
 import Search from "./Search";
 import Match from "./Match";
 import Profile from "./Profile";
 import Chat from "./Chat";
 import "./App.css";
+import { Routes, Route, Outlet } from "react-router-dom";
 
 function App() {
   const [matches, setMatches] = useState([]);
@@ -89,7 +90,40 @@ function App() {
         isToggled={isToggled}
       />
       <Search handleMatchArray={handleMatchArray} />
-      {showProfile ? (
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <MatchContainer
+              matches={matchArray}
+              handleDeleteMatch={handleDeleteMatch}
+              handleYesClick={handleYesClick}
+              showMatches={showMatches}
+              yesMatch={yesMatch}
+              handleToggle={handleToggle}
+              isToggled={isToggled}
+            />
+          }
+        />
+
+        <Route path="/profile" element={<Profile setMatches={setMatches} />} />
+        <Route
+          path="/Matches"
+          element={
+            <LikedMatches
+              matches={matchArray}
+              handleDeleteMatch={handleDeleteMatch}
+              handleYesClick={handleYesClick}
+              showMatches={showMatches}
+              yesMatch={yesMatch}
+              handleToggle={handleToggle}
+              isToggled={isToggled}
+            />
+          }
+        />
+      </Routes>
+
+      {/* {showProfile ? (
         <Profile setMatches={setMatches} />
       ) : (
         <MatchContainer
@@ -101,7 +135,7 @@ function App() {
           handleToggle={handleToggle}
           isToggled={isToggled}
         />
-      )}
+      )} */}
     </div>
   );
 }

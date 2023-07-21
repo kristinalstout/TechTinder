@@ -32,6 +32,7 @@ function Profile({setMatches}) {
       setNewMatch({...newMatch, [name]:value});}
 
   return (
+    
     <form id="full_profile" onSubmit={handleSubmit}>
       <h2>Create Your Love profile</h2>
       <h4>Pick your profile picture</h4>

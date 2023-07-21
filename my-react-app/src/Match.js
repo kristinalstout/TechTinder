@@ -40,9 +40,10 @@ function Match({
         <img src={match.image} alt={"Your next soulmate"} className="image" />
         <div className="card_row">
           <div className="card_column">
-            <h4 className="card_title">{match.name}</h4>
-            <div className="card_bio">
-              <p>{match.city}</p>
+            <h4 className="name">{match.name}</h4>
+
+            <div>
+              <p className="city">{match.city}</p>
               <p>{match.bio}</p>
               <p>Interests: {match.interests}</p>
               <em className="breaker">*Dealbreaker: {match.dealbreakers}*</em>

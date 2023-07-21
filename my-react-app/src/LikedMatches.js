@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NextButton from "./NextButton";
 import Match from "./Match";
 
-function MatchContainer({
+function LikedMatches({
   matches,
   handleDeleteMatch,
   handleYesClick,
@@ -31,8 +31,7 @@ function MatchContainer({
   }
 
   function renderMatches() {
-  
-      return matches.map((match) => {
+      return yesMatch.map((match) => {
         return (
           <div key={`match-${match.id}`}>
             <Match
@@ -56,7 +55,7 @@ function MatchContainer({
   );
 }
 
-export default MatchContainer;
+export default LikedMatches;
 
 // !yesMatch
 
@@ -72,3 +71,4 @@ export default MatchContainer;
 // if (yesMatch) {
 //  return !showMatches
 //   }
+﻿

@@ -7,7 +7,7 @@ h1 {
 }
 
 img {
-  width: 10%;
+  width: 50%;
 }
 
 .TT {
@@ -61,7 +61,7 @@ img {
 }
 
 .mode {
-  position: right;
+  float: right;
   cursor: pointer;
 }
 
@@ -94,8 +94,48 @@ img {
 
 .card {
   padding: 10px;
+  margin: 10px;
   box-shadow: 0 0 7px 0 #620840;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  border-radius: 20px;
+  border: 3px solid #cd066d;
   width: 350px;
+  background-color: rgb(255, 201, 240);
+}
+
+.name {
+  color: white;
+  padding-top: 10px;
+  padding-bottom: 8px;
+  font-size: 22px;
+}
+
+.city {
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.interests {
+  color: white;
+  padding-top: 12px;
+  padding-bottom: 10px;
+}
+
+.breakers {
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+
+.next {
+  font-size: 15px;
+  color: white;
+  background-color: rgb(204, 0, 133);
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
